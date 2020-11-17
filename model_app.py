@@ -1,15 +1,14 @@
 
+from urllib.request import urlopen
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pickle
-from sklearn.linear_model import OrthogonalMatchingPursuit
+from sklearn.linear_model import LinearRegression
 
 st.write("""
 # IPL Player Value Prediction App
-This app predicts the **player value** in IPL!
-Data obtained from [Cricmetric](http://www.cricmetric.com/ipl/ranks/).
-""")
+This app predicts the **player value** in IPL!""")
+st.write("""Data is obtained from [Cricmetric](http://www.cricmetric.com/ipl/ranks/).""")
 
 st.sidebar.header('User Input Features')
 
@@ -18,37 +17,50 @@ st.sidebar.markdown("""
 """)
 
 # Collects user input features into dataframe
-uploaded_file = st.sidebar.file_uploader(
-    "Upload your input CSV file", type=["csv"])
+uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
 if uploaded_file is not None:
     input_df = pd.read_csv(uploaded_file)
+    input_df = input_df.drop(['Rank','Player','Team'], axis=1)
+    input_df['Salary'] = input_df['Salary'].str.replace(',', '').str.replace('$', '').astype(float)
+    input_df = input_df.fillna('0')
 else:
     def user_input_features():
-        Team = st.sidebar.selectbox('Team', ('Mumbai Indians', 'Kings XI Punjab', 'Delhi Capitals', 
-        'Royal Challengers Bangalore', 'Sunrisers Hyderabad', 'Chennai Super Kings', 'Rajasthan Royals', 'Kolkata Knight Riders'))
-        RAA = st.sidebar.slider('RAA', -292.00, -21.00, 410.00)
-        Wins = st.sidebar.slider('Wins', -0.98, -0.07, 1.41)
-        EFscore = st.sidebar.slider('EFscore', 0.00, 0.04, 0.24)
-        data = {'Team': Team,
-                'RAA': RAA,
+        RAA = st.sidebar.slider('RAA', -292.00, 410.00, -21.00)
+        Wins = st.sidebar.slider('Wins', -0.98, 1.41, -0.07)
+        EFscore = st.sidebar.slider('EFscore', 0.00, 0.24, 0.04)
+        Salary = st.sidebar.slider('Salary', 15000.00, 2656250.00, 581584.48)
+        data = {'RAA': RAA,
                 'Wins': Wins,
-                'EFscore': EFscore}
+                'EFscore': EFscore,
+                'Salary': Salary
+                }
         features = pd.DataFrame(data, index=[0])
         return features
     input_df = user_input_features()
 
-# Main Panel
 
-# Print specified input parameters
-st.header('Specified Input parameters')
-st.write(input_df)
-st.write('---')
+# Displays the user input features
+st.subheader('User Input features')
 
-# Reads in saved classification model
-load_reg = pickle.load(open('https://github.com/adityarc19/IPL-player-value-prediction/blob/main/model.pkl?raw=true', 'rb'))
+if uploaded_file is not None:
+    st.write(input_df)
+else:
+    st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
+    st.write(input_df)
+
+train_df = pd.read_csv('https://raw.githubusercontent.com/adityarc19/IPL-player-value-prediction/main/2019-20.csv')
+train_df = train_df.fillna('0')
+
+X = train_df[['RAA', 'Wins', 'EFscore', 'Salary']]
+y = train_df[['Value']]
+
+reg = LinearRegression().fit(X, y)
 
 # Apply model to make predictions
-prediction = load_reg.predict(input_df)
-prediction_proba = load_reg.predict_proba(input_df)
+prediction = reg.predict(input_df)
+
+st.header('Prediction of Value (in $)')
+st.write(prediction)
+st.write('---')
 
 
