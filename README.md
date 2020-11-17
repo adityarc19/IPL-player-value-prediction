@@ -4,7 +4,7 @@
 
 [logo]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/tenor.gif
 
-#### * Prediction of 'value' is made on the basis of data of past two IPL seasons (2019 & 2020).
+#### * In this web app, prediction of 'value' is made on the basis of data of past two IPL seasons (2019 & 2020).
 The value of each player is estimated by calculating how much above average that player contributed as a batsman or a bowler. Both the batting and bowling scores are combined into a single score called Runs Above Average, or RAA. An RAA score of 0 implies an average performance. A positive RAA means that the player was above average, and conversely a player with negative RAA means his performance was below average. 
 The value of a player is the overall average salary, plus a value that is proportional to the total RAA score of the player. Basically, the player valuation methodology re-distributes the total spend of the teams to the players based on their performance.
 
