@@ -64,4 +64,4 @@ st.write(prediction)
 st.write('---')
 
 
-st.write('[Github repo](https://github.com/adityarc19/IPL-player-value-prediction)')
+st.write("""For understanding more on how 'value' is calculated and understanding about the details of the implementation, check out --> [Github repo](https://github.com/adityarc19/IPL-player-value-prediction)""")
