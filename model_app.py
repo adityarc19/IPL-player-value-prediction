@@ -3,7 +3,7 @@ from urllib.request import urlopen
 import streamlit as st
 import pandas as pd
 import numpy as np
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import OrthogonalMatchingPursuit
 
 st.write("""
 # IPL Player Value Prediction App
@@ -54,10 +54,10 @@ train_df = train_df.fillna('0')
 X = train_df[['RAA', 'Wins', 'EFscore', 'Salary']]
 y = train_df[['Value']]
 
-reg = LinearRegression().fit(X, y)
+omp = OrthogonalMatchingPursuit().fit(X, y)
 
 # Apply model to make predictions
-prediction = reg.predict(input_df)
+prediction = omp.predict(input_df)
 
 st.header('Prediction of Value (in currency)')
 st.write(prediction)
