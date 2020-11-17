@@ -59,7 +59,7 @@ reg = LinearRegression().fit(X, y)
 # Apply model to make predictions
 prediction = reg.predict(input_df)
 
-st.header('Prediction of Value (in $)')
+st.header('Prediction of Value (in currency)')
 st.write(prediction)
 st.write('---')
 
