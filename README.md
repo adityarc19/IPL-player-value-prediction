@@ -5,7 +5,7 @@
 [logo]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/tenor.gif
 
 #### * Prediction is made on the basis of data of past two IPL seasons (2019 & 2020).
-#### * I have used **Orthogonal Matching Pursuit** as a regression algorithm for this prediction problem. 
+#### * I have used 'Orthogonal Matching Pursuit' as a regression algorithm for this prediction problem. 
 #### Some results are:
  1. **Metrics**
  
