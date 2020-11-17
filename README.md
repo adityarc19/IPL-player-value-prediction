@@ -10,7 +10,7 @@
 #### Orthogonal Matching Pursuit Algorithm:
 Orthogonal Matching Pursuit Algorithm (OMP) is a greedy compressed sensing recovery algorithm which selects the best fitting column of the sensing matrix in each iteration. A least squares (LS) optimization is then performed in the subspace spanned by all previously picked columns.
 
-More on OMP model usage : https://scikit-learn.org/stable/auto_examples/linear_model/plot_omp.html
+Check out [scikit-learn website](https://scikit-learn.org/stable/auto_examples/linear_model/plot_omp.html) for more on OMP model usage. 
 
 #### Some results are:
  1. **Metrics**
