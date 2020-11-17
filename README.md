@@ -2,6 +2,6 @@
 
 ![money gif][logo]
 
-[money]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/dollar-gif.gif
+[money]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/dollar.mp4
 
 The web app is live at https://ipl-player-value-pred-app.herokuapp.com/
