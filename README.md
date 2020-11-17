@@ -1,4 +1,4 @@
-# IPL Player Value Prediction (web app)[https://ipl-player-value-pred-app.herokuapp.com/]
+# IPL Player Value Prediction [(web app)](https://ipl-player-value-pred-app.herokuapp.com/)
 
 ![money gif][logo]
 
