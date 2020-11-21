@@ -12,43 +12,33 @@ The value of a player is the overall average salary, plus a value that is propor
 
 #### * I have used 'Extreme Gradient Boosting' as a regression model for this prediction problem. 
 
-
-Check out [scikit-learn website](https://scikit-learn.org/stable/auto_examples/linear_model/plot_omp.html) for more on OMP model usage. 
-
 #### Some results are:
- 1. **Metrics**
+ 1. **Residual plot**
  
 ![metrics][a]
 
-[a]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/metrics.jpeg?raw=true
+[a]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/res-plot.png?raw=true
 
-2. **Hyperparams used**
+2. **Prediction error plot**
 
 ![hyperparams][b]
 
-[b]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/hyperparams.png?raw=true
+[b]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/pred-error-plot.png?raw=true
 
-3. **Residual plot**
-
-![res_plot][c]
-
-[c]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/residual%20plot.png?raw=true
-
-4. **Prediction error plot**
-
-![pe_plot][d]
-
-[d]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/prediction%20error%20plot.png?raw=true
-
-5. **Learning curve plot**
+3. **Learning curve plot**
 
 ![lc_plot][e]
 
-[e]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/learning%20curve.png?raw=true
+[e]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/learning-curve.png?raw=true
 
-6. **Validation curve plot**
+4. **Validation curve plot**
 
 ![vc_plot][f]
 
-[f]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/validation%20curve.png?raw=true
+[f]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/valid-curve.png?raw=true
 
+5. **Feature importance plot**
+
+![ft_plot][f]
+
+[f]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/feature-imp.png?raw=true
