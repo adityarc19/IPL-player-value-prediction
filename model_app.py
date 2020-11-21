@@ -3,9 +3,8 @@ from urllib.request import urlopen
 import streamlit as st
 import pandas as pd
 import numpy as np
-from pycaret.regression import *
-#import xgboost
-#from xgboost import XGBRegressor
+import xgboost
+from xgboost import XGBRegressor
 
 st.write("""
 # IPL Player Value Prediction App
@@ -53,22 +52,13 @@ else:
 train_df = pd.read_csv('https://raw.githubusercontent.com/adityarc19/IPL-player-value-prediction/main/2019-20.csv')
 train_df = train_df.fillna('0')
 
-# X = train_df[['RAA', 'Wins', 'EFscore', 'Salary']]
-# y = train_df[['Value']]
+X = train_df[['RAA', 'Wins', 'EFscore', 'Salary']]
+y = train_df[['Value']]
 
-reg = setup(data=train_df,
-            target='Value',
-            numeric_imputation='mean',
-            ignore_features=['Player', 'Team'],
-            normalize=True,
-            silent=True)
-
-#xgb_model = XGBRegressor().fit(X, y)
-xgb = create_model('xgboost')
-tuned_xgb = tune_model('xgboost')
+xgb_model = XGBRegressor().fit(X, y)
 
 # Apply model to make predictions
-prediction = tuned_xgb.predict(input_df)
+prediction = xgb_model.predict(input_df)
 
 st.header('Prediction of Value (in currency)')
 st.write(prediction)
