@@ -3,7 +3,7 @@ from urllib.request import urlopen
 import streamlit as st
 import pandas as pd
 import numpy as np
-import shap
+#import shap
 import xgboost
 from xgboost import XGBRegressor
 
@@ -68,18 +68,18 @@ st.write('---')
 
 # Explaining the model's predictions using SHAP values
 # https://github.com/slundberg/shap
-explainer = shap.TreeExplainer(xgb_model)
-shap_values = explainer.shap_values(X)
+# explainer = shap.TreeExplainer(xgb_model)
+# shap_values = explainer.shap_values(X)
 
-st.header('Feature Importance')
-plt.title('Feature importance based on SHAP values')
-shap.summary_plot(shap_values, X)
-st.pyplot(bbox_inches='tight')
-st.write('---')
+# st.header('Feature Importance')
+# plt.title('Feature importance based on SHAP values')
+# shap.summary_plot(shap_values, X)
+# st.pyplot(bbox_inches='tight')
+# st.write('---')
 
-plt.title('Feature importance based on SHAP values (Bar)')
-shap.summary_plot(shap_values, X, plot_type="bar")
-st.pyplot(bbox_inches='tight')
+# plt.title('Feature importance based on SHAP values (Bar)')
+# shap.summary_plot(shap_values, X, plot_type="bar")
+# st.pyplot(bbox_inches='tight')
 
 
 st.write("""For understanding more on how 'player value' is calculated and the other details of the implementation, check out --> [Github repo](https://github.com/adityarc19/IPL-player-value-prediction)""")
