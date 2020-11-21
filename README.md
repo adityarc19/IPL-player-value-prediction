@@ -15,13 +15,13 @@ The value of a player is the overall average salary, plus a value that is propor
 #### Some results are:
  1. **Residual plot**
  
-![metrics][a]
+![rp][a]
 
 [a]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/res-plot.png?raw=true
 
 2. **Prediction error plot**
 
-![hyperparams][b]
+![pe][b]
 
 [b]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/pred-error-plot.png?raw=true
 
@@ -39,6 +39,6 @@ The value of a player is the overall average salary, plus a value that is propor
 
 5. **Feature importance plot**
 
-![ft_plot][f]
+![ft_plot][g]
 
-[f]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/feature-imp.png?raw=true
+[g]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/feature-imp.png?raw=true
