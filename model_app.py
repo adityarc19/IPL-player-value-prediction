@@ -3,7 +3,8 @@ from urllib.request import urlopen
 import streamlit as st
 import pandas as pd
 import numpy as np
-from sklearn.linear_model import OrthogonalMatchingPursuit
+import xgboost
+from xgboost import XGBRegressor
 
 st.write("""
 # IPL Player Value Prediction App
@@ -54,10 +55,10 @@ train_df = train_df.fillna('0')
 X = train_df[['RAA', 'Wins', 'EFscore', 'Salary']]
 y = train_df[['Value']]
 
-omp = OrthogonalMatchingPursuit().fit(X, y)
+xgb_model = XGBRegressor().fit(X, y)
 
 # Apply model to make predictions
-prediction = omp.predict(input_df)
+prediction = xgb_model.predict(input_df)
 
 st.header('Prediction of Value (in currency)')
 st.write(prediction)
