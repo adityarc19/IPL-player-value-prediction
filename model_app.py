@@ -49,7 +49,7 @@ else:
     st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
     st.write(input_df)
 
-train_df = pd.read_csv('https://raw.githubusercontent.com/adityarc19/IPL-player-value-prediction/main/2019-20.csv')
+train_df = pd.read_csv('https://github.com/adityarc19/IPL-player-value-prediction/raw/main/data/full-data.csv')
 train_df = train_df.fillna('0')
 
 X = train_df[['RAA', 'Wins', 'EFscore', 'Salary']]
