@@ -10,9 +10,14 @@ The value of a player is the overall average salary, plus a value that is propor
 
 [Source](http://www.cricmetric.com/blog/2015/05/how-much-was-each-player-actually-worth-in-ipl-2015/)
 
-#### * I have used 'Extreme Gradient Boosting' as a regression model for this prediction problem. 
+#### * I have used 'Extreme Gradient Boosting' as a regression model for this prediction problem based on the following results: 
 
-#### Some results are:
+![metrics][m]
+
+[m]: https://github.com/adityarc19/IPL-player-value-prediction/blob/main/images/models.png?raw=true
+
+#### Model plots:
+
  1. **Residual plot**
  
 ![rp][a]
