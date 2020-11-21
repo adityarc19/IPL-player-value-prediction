@@ -50,7 +50,7 @@ else:
     st.write(input_df)
 
 train_df = pd.read_csv('https://github.com/adityarc19/IPL-player-value-prediction/raw/main/data/full-data.csv')
-train_df = train_df.fillna('0')
+train_df = train_df.fillna('0.0')
 
 X = train_df[['RAA', 'Wins', 'EFscore', 'Salary']]
 y = train_df[['Value']]
