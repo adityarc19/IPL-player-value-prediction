@@ -47,7 +47,7 @@ st.subheader('User Input features')
 if uploaded_file is not None:
     st.write(input_df)
 else:
-    st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
+    st.write('Awaiting CSV file to be uploaded. Currently using sidebar input parameters (shown below).')
     st.write(input_df)
 
 train_df = pd.read_csv('https://github.com/adityarc19/IPL-player-value-prediction/raw/main/data/full-data.csv')
